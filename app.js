@@ -37,10 +37,10 @@ app.use('/api/v1', payment)
 app.use('/api/v1', order)
 
 if (process.env.NODE_ENV === 'PRODUCTION') {
-    app.use(express.static(path.join(__dirname, '../ecom-back/build')))
+    app.use(express.static(path.join(__dirname, '../ecom-front/build')))
 
     app.get('*', (req, res) => {
-        res.sendFile(path.resolve(__dirname, '../ecom-back/build/index.html'))
+        res.sendFile(path.resolve(__dirname, '../ecom-front/build/index.html'))
     })
     
 }
